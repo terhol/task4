@@ -40,5 +40,5 @@ public interface WorkStack {
      * @return position of the work item
      * @throws UnknownItemException if the parameter item is null or if the stack does not contain the given work item.
      */
-    int getItemPosition(WorkItem item);
+    int getItemPosition(WorkItem item) throws UnknownItemException;
 }

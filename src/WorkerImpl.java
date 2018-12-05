@@ -1,10 +1,10 @@
 /**
  * @author Tereza Holm
  */
-public class WorkerImpl implements Worker  {
+public class WorkerImpl implements Worker {
     private Table table;
 
-    public WorkerImpl (Table table) {
+    public WorkerImpl(Table table) {
         this.table = table;
     }
 
@@ -16,21 +16,22 @@ public class WorkerImpl implements Worker  {
 
     @Override
     public boolean work() {
-        table.pop();
-        return true;
+        return table.pop() != null;
     }
 
     @Override
     public boolean deadlineWork(WorkItem item) {
-        try {
-            for (int i = table.getTop(); i > table.getItemPosition(item); i-- ) {
-                table.pop();
-            }
-        }
-        catch (UnknownItemException e) {
+        if (item == null) {
             return false;
         }
-
-        return true;
+        try {
+            int position = table.getItemPosition(item);
+            for (int i = 1; i < position; i++) {
+                table.pop();
+            }
+            return work();
+        } catch (UnknownItemException ex) {
+            return false;
+        }
     }
 }
