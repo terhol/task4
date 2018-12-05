@@ -18,7 +18,7 @@ public interface WorkStack {
      * @param item work item which will be inserted to the stack
      * @return true if the item is successfully inserted,
      * false otherwise (e.g. if the stack is full)
-     * @throws NullPointerException if the parameter item is null.
+     * @throws if the parameter item is null.
      */
     boolean push(WorkItem item);
 
@@ -38,8 +38,7 @@ public interface WorkStack {
      *
      * @param item a work item
      * @return position of the work item
-     * @throws NullPointerException     if the parameter item is null.
-     * @throws IllegalArgumentException if the stack does not contain the given work item.
+     * @throws UnknownItemException if the parameter item is null or if the stack does not contain the given work item.
      */
     int getItemPosition(WorkItem item);
 }

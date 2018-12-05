@@ -59,7 +59,7 @@ public class TestPart1 {
     @Test
     public void testPushAndPop() {
         WorkStack q = new Table(2);
-        assertTrue(q.isEmpty(), "Prave vytvorena zasobnik hlasi, ze neni prazdna.", );
+        assertTrue(q.isEmpty(), "Prave vytvorena zasobnik hlasi, ze neni prazdna.");
 
         assertTrue(q.push(items[0]), "Pri vlozeni prvku zasobnik nevraci [true].");
         assertFalse(q.isEmpty(), "Po vlozeni jedne polozky zasobnik hlasi, ze je prazdna.");

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.fail;
  * @author Jan Papousek
  */
 public class TestPart2 {
-    /*    // SMAZAT TENTO RADEK
+
     private static WorkItem[] items = new WorkItem[]{new WorkItem("Prvni polozka"), new WorkItem("Druha polozka"), new WorkItem("Treti polozka")};
     private Worker worker;
 
@@ -64,5 +64,5 @@ public class TestPart2 {
         assertTrue(worker.work(), "Metoda [work] nevraci true, kdyz ma pridelenou praci.");
         assertFalse(worker.work(), "Metoda [work] nevraci false, kdyz nema pracovnik pridelenou praci.");
     }
-    */    // SMAZAT TENTO RADEK
+
 }
